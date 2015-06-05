@@ -8,59 +8,243 @@
         <!--Welcome View Controller-->
         <scene sceneID="PeC-6C-DIg">
             <objects>
-                <viewController id="W38-FO-G4a" customClass="WelcomeViewController" customModule="Selfie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcomeVC" id="W38-FO-G4a" customClass="WelcomeViewController" customModule="Selfie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zbv-bu-zOR"/>
                         <viewControllerLayoutGuide type="bottom" id="i5K-5M-NYy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="chA-3m-dtV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="x6v-WY-i5j">
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhG-eU-twQ" customClass="PrettyButton" customModule="Selfie" customModuleProvider="target">
+                                <rect key="frame" x="20" y="540" width="320" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2bL-Yr-Kz0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="REGISTER">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.0" green="0.25098039220000001" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="6AN-nN-7Ka" kind="show" id="Mp5-7f-Xcc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0n-5J-ijZ" customClass="PrettyButton" customModule="Selfie" customModuleProvider="target">
+                                <rect key="frame" x="20" y="480" width="320" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9Bl-GF-qg0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="LOGIN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="tRo-Od-0xn" kind="show" id="bu3-Ht-2MM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AhG-eU-twQ" firstAttribute="leading" secondItem="chA-3m-dtV" secondAttribute="leading" constant="20" id="5aP-mR-ulh"/>
+                            <constraint firstItem="f0n-5J-ijZ" firstAttribute="leading" secondItem="chA-3m-dtV" secondAttribute="leading" constant="20" id="6Jm-np-F9p"/>
+                            <constraint firstItem="i5K-5M-NYy" firstAttribute="top" secondItem="AhG-eU-twQ" secondAttribute="bottom" constant="20" id="70i-mY-g3R"/>
+                            <constraint firstAttribute="trailing" secondItem="f0n-5J-ijZ" secondAttribute="trailing" constant="20" id="Vy9-2S-e1v"/>
+                            <constraint firstAttribute="trailing" secondItem="AhG-eU-twQ" secondAttribute="trailing" constant="20" id="YFm-zA-7iQ"/>
+                            <constraint firstItem="AhG-eU-twQ" firstAttribute="top" secondItem="f0n-5J-ijZ" secondAttribute="bottom" constant="20" id="g28-3Z-AI1"/>
+                            <constraint firstItem="x6v-WY-i5j" firstAttribute="leading" secondItem="chA-3m-dtV" secondAttribute="leading" id="jfy-9p-08a"/>
+                            <constraint firstItem="x6v-WY-i5j" firstAttribute="top" secondItem="chA-3m-dtV" secondAttribute="top" id="oGg-Wz-Znm"/>
+                            <constraint firstAttribute="trailing" secondItem="x6v-WY-i5j" secondAttribute="trailing" id="pf8-6O-uAE"/>
+                            <constraint firstItem="i5K-5M-NYy" firstAttribute="top" secondItem="x6v-WY-i5j" secondAttribute="bottom" id="zCC-uh-ej6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oPi-Et-qIK"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="360" height="600"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwD-5E-hb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1786" y="-259"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="aUt-u5-wQY">
             <objects>
-                <viewController id="tRo-Od-0xn" customClass="RegisterViewController" customModule="Selfie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tRo-Od-0xn" customClass="LoginViewController" customModule="Selfie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bGs-IC-6il"/>
                         <viewControllerLayoutGuide type="bottom" id="yNT-dv-vDW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5rw-Oz-MFP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOM-GS-h71" customClass="PrettyButton" customModule="Selfie" customModuleProvider="target">
+                                <rect key="frame" x="20" y="540" width="320" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="V7a-Dt-b5A"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="dYU-fS-YWZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="LOGIN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.0" green="0.25098039220000001" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dYU-fS-YWZ"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EAo-yW-7jq" customClass="PrettyField" customModule="Selfie" customModuleProvider="target">
+                                <rect key="frame" x="20" y="490" width="320" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JBA-5y-VXm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p4v-pg-SI5" customClass="PrettyField" customModule="Selfie" customModuleProvider="target">
+                                <rect key="frame" x="20" y="440" width="320" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="i62-L9-Muu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p4v-pg-SI5" firstAttribute="leading" secondItem="5rw-Oz-MFP" secondAttribute="leading" constant="20" id="2wa-Hl-uFi"/>
+                            <constraint firstAttribute="trailing" secondItem="EAo-yW-7jq" secondAttribute="trailing" constant="20" id="40g-au-n52"/>
+                            <constraint firstItem="EAo-yW-7jq" firstAttribute="top" secondItem="p4v-pg-SI5" secondAttribute="bottom" constant="10" id="5MS-tg-ZU9"/>
+                            <constraint firstItem="sOM-GS-h71" firstAttribute="top" secondItem="EAo-yW-7jq" secondAttribute="bottom" constant="10" id="EGA-dC-QXP"/>
+                            <constraint firstItem="sOM-GS-h71" firstAttribute="leading" secondItem="5rw-Oz-MFP" secondAttribute="leading" constant="20" id="ZDZ-Ne-jWO"/>
+                            <constraint firstItem="EAo-yW-7jq" firstAttribute="leading" secondItem="5rw-Oz-MFP" secondAttribute="leading" constant="20" id="aM4-RY-OSk"/>
+                            <constraint firstAttribute="trailing" secondItem="sOM-GS-h71" secondAttribute="trailing" constant="20" id="qsA-WT-FNL"/>
+                            <constraint firstAttribute="trailing" secondItem="p4v-pg-SI5" secondAttribute="trailing" constant="20" id="sEr-GY-Z2y"/>
+                            <constraint firstItem="yNT-dv-vDW" firstAttribute="top" secondItem="sOM-GS-h71" secondAttribute="bottom" constant="20" id="z2M-mq-Ak1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="z2M-mq-Ak1" id="aaA-T4-OdN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w0y-FS-uJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2482" y="-965"/>
+            <point key="canvasLocation" x="2595" y="-973"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="3Ka-53-q17">
             <objects>
-                <viewController id="6AN-nN-7Ka" customClass="LoginViewController" customModule="Selfie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6AN-nN-7Ka" customClass="RegisterViewController" customModule="Selfie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8FR-OB-jDZ"/>
                         <viewControllerLayoutGuide type="bottom" id="rr1-66-JlT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0tV-2f-H6J">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jON-Bm-aK7" customClass="PrettyButton" customModule="Selfie" customModuleProvider="target">
+                                <rect key="frame" x="20" y="540" width="320" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DUQ-qU-z8m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="REGISTER">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.0" green="0.25098039220000001" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xaS-hi-7N5" customClass="PrettyField" customModule="Selfie" customModuleProvider="target">
+                                <rect key="frame" x="20" y="490" width="320" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YT0-y5-7xG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PPZ-OO-4H3" customClass="PrettyField" customModule="Selfie" customModuleProvider="target">
+                                <rect key="frame" x="20" y="440" width="320" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="r2E-BW-3nA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hnD-nc-pLQ" customClass="PrettyField" customModule="Selfie" customModuleProvider="target">
+                                <rect key="frame" x="20" y="390" width="320" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="76G-84-myz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xaS-hi-7N5" firstAttribute="top" secondItem="PPZ-OO-4H3" secondAttribute="bottom" constant="10" id="Gmc-it-tDP"/>
+                            <constraint firstItem="hnD-nc-pLQ" firstAttribute="leading" secondItem="0tV-2f-H6J" secondAttribute="leading" constant="20" id="KkJ-mo-mEQ"/>
+                            <constraint firstItem="rr1-66-JlT" firstAttribute="top" secondItem="jON-Bm-aK7" secondAttribute="bottom" constant="20" id="Pb8-b8-1gb"/>
+                            <constraint firstAttribute="trailing" secondItem="jON-Bm-aK7" secondAttribute="trailing" constant="20" id="Xl6-bH-gZj"/>
+                            <constraint firstItem="jON-Bm-aK7" firstAttribute="top" secondItem="xaS-hi-7N5" secondAttribute="bottom" constant="10" id="Yaq-Ja-BHN"/>
+                            <constraint firstAttribute="trailing" secondItem="hnD-nc-pLQ" secondAttribute="trailing" constant="20" id="czy-Ic-WwK"/>
+                            <constraint firstAttribute="trailing" secondItem="xaS-hi-7N5" secondAttribute="trailing" constant="20" id="i9T-eo-LFi"/>
+                            <constraint firstItem="PPZ-OO-4H3" firstAttribute="top" secondItem="hnD-nc-pLQ" secondAttribute="bottom" constant="10" id="ppx-Jy-mYq"/>
+                            <constraint firstItem="jON-Bm-aK7" firstAttribute="leading" secondItem="0tV-2f-H6J" secondAttribute="leading" constant="20" id="qsh-Ok-0Bc"/>
+                            <constraint firstAttribute="trailing" secondItem="PPZ-OO-4H3" secondAttribute="trailing" constant="20" id="wLg-L7-QRt"/>
+                            <constraint firstItem="xaS-hi-7N5" firstAttribute="leading" secondItem="0tV-2f-H6J" secondAttribute="leading" constant="20" id="yAB-0L-Ufe"/>
+                            <constraint firstItem="PPZ-OO-4H3" firstAttribute="leading" secondItem="0tV-2f-H6J" secondAttribute="leading" constant="20" id="yBe-8d-YII"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUY-RN-TPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2482" y="-259"/>
+            <point key="canvasLocation" x="2563" y="-259"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Feed-->
         <scene sceneID="A8X-0E-mbn">
             <objects>
                 <tableViewController id="GJU-hK-3uB" customClass="FeedTableViewController" customModule="Selfie" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,7 +265,15 @@
                             <outlet property="delegate" destination="GJU-hK-3uB" id="tIW-Hq-Nhz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Ha5-AD-tUA"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Feed" id="Ha5-AD-tUA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q5q-f9-HMk">
+                            <connections>
+                                <segue destination="zSb-uA-AyT" kind="presentation" id="ecE-cT-QeL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iun-XN-5y6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="1786" y="1184"/>
         </scene>
-        <!--Camera View Controller-->
+        <!--Submit View View Controller-->
         <scene sceneID="bzV-LS-H5E">
             <objects>
-                <viewController id="pDI-N2-E7C" customClass="CameraViewController" sceneMemberID="viewController">
+                <viewController id="pDI-N2-E7C" customClass="SubmitViewViewController" customModule="Selfie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pLU-0W-UId"/>
                         <viewControllerLayoutGuide type="bottom" id="7Bw-eH-E63"/>
@@ -186,7 +378,7 @@
         <!--Navigation Controller-->
         <scene sceneID="QaM-1t-UpW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zSb-uA-AyT" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="zSb-uA-AyT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ijj-5N-cdc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -223,7 +415,7 @@
         <!--Navigation Controller-->
         <scene sceneID="T7N-mg-ge4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ie5-1k-yX0" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="welcomeNVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ie5-1k-yX0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I1D-hq-A46">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -341,4 +533,7 @@
             <point key="canvasLocation" x="2482" y="1184"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Splash" width="320" height="568"/>
+    </resources>
 </document>

@@ -7,15 +7,43 @@
 //
 
 import UIKit
+import Parse
 
-class PrettyField: UITextField {
+@IBDesignable class PrettyField: UITextField {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
+    @IBInspectable var cornerRadius: CGFloat = 10
+    @IBInspectable var fillColor: UIColor = UIColor.clearColor()
+    @IBInspectable var strokeColor: UIColor = DARK_BLUE
+    @IBInspectable var strokeWidth: CGFloat = 1
+    
+    
     override func drawRect(rect: CGRect) {
-        // Drawing code
+        
+        var context = UIGraphicsGetCurrentContext()
+        let insetRect = CGRectInset(rect, strokeWidth / 2, strokeWidth / 2)
+        
+        let path = UIBezierPath(roundedRect: insetRect, cornerRadius: cornerRadius)
+        
+        fillColor.set()
+        
+        CGContextAddPath(context, path.CGPath)
+        CGContextFillPath(context)
+        
+        strokeColor.set()
+        
+        CGContextSetLineWidth(context, strokeWidth)
+        CGContextAddPath(context, path.CGPath)
+        CGContextStrokePath(context)
+        
     }
-    */
-
+    
+    override func textRectForBounds(bounds: CGRect) -> CGRect {
+        
+        return CGRectInset(bounds, 10, 10)
+    }
+    
+    override func editingRectForBounds(bounds: CGRect) -> CGRect {
+        
+        return CGRectInset(bounds, 10, 10)  
+    }
 }

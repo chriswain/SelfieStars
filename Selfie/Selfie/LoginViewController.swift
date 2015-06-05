@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillChangeFrameNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            
+            if let kbSize = notification.userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size {
+            
+            self.bottomConstraint.constant = 20 + kbSize.height
+            }
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardDidHideNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            
+            self.bottomConstraint.constant = 20
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
